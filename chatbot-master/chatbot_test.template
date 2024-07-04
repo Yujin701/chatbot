@@ -1,6 +1,11 @@
 {% block %}
+
+	{% client %}(do you know about|who is|what is) (?P<query>.*){% endclient %}
+	{% response %}{% call wiki: %query %}{% endresponse %}
+
     {% client %}(how is the weather in|weather in) (?P<query>.*){% endclient %}
     {% response %}{% call weather: %query %}{% endresponse %}
+
 {% endblock %}
 
 {% block %}
